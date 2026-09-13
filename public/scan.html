@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>sinal enviado</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap');
+  html,body{ background:#08090a; color:#e7e9e6; font-family:'Inter',sans-serif; height:100%; }
+  .mono{ font-family:'JetBrains Mono', monospace; }
+  .ring{
+    width:96px; height:96px; border-radius:9999px;
+    border:2px solid #4ade80;
+    display:flex; align-items:center; justify-content:center;
+    box-shadow: 0 0 30px rgba(74,222,128,.35);
+    animation: pop .5s ease-out;
+  }
+  @keyframes pop{
+    0%{ transform:scale(.6); opacity:0; }
+    100%{ transform:scale(1); opacity:1; }
+  }
+</style>
+</head>
+<body class="min-h-screen flex items-center justify-center px-6">
+  <div class="max-w-sm w-full text-center">
+    <div class="ring mx-auto mb-6">
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="20 6 9 17 4 12"></polyline>
+      </svg>
+    </div>
+    <h1 class="text-lg font-semibold mb-2">Sinal enviado com sucesso ao painel!</h1>
+    <p class="text-sm text-[#7a8079] leading-relaxed">
+      Sua leitura já apareceu em tempo real no painel de monitoramento.
+      Você pode fechar esta página.
+    </p>
+    <p id="ts" class="mono text-[11px] text-[#4a4f4d] mt-6"></p>
+  </div>
+<script>
+  document.getElementById('ts').textContent = new Date().toLocaleString('pt-BR');
+</script>
+</body>
+</html>
